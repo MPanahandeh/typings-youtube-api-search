@@ -1,6 +1,6 @@
 {
   "name": "youtube-api-search",
-  "ambient":false,
+  "ambient":true,
   "author":"Andrew Ross",  
   "main":"youtube-api-search.d.ts"
 }

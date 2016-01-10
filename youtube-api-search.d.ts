@@ -1,4 +1,4 @@
-declare module YTSearch {
+declare namespace YTSearch {
 	interface ISearchArgs {
 		key: string;
 		term?: string;
@@ -41,5 +41,7 @@ declare module YTSearch {
 	}
 }
 
-declare let ytSearch : YTSearch.ISearch;
-export = ytSearch;
+declare module "youtube-api-search"{
+	let ytSearch : YTSearch.ISearch;
+	export = ytSearch;	
+}
