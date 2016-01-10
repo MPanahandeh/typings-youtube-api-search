@@ -1,0 +1,45 @@
+declare module YTSearch {
+	interface ISearchArgs {
+		key: string;
+		term?: string;
+	}
+
+	interface IVideoResponse {
+		etag: string;
+		id: IVideoId;
+		kind: string;
+		snippet: IVideoSnippet;
+	}
+
+	interface IVideoId {
+		kind:string;
+		videoId:string;	
+	}
+
+	interface IVideoSnippet {
+		channelId: string;
+		channelTitle: string;
+		description: string;
+		liveBroadcastContent: string;
+		publishedAt: string;
+		thumbnails: IVideoThumbnails;
+		title: string;
+	}
+
+	interface IVideoThumbnails {
+		default: IThumbnail;
+		high: IThumbnail;
+		medium: IThumbnail;
+	}
+
+	interface IThumbnail {
+		url: string;
+	}
+
+	interface ISearch {
+		(searchArgs: ISearchArgs, callback: (data:IVideoResponse[]) => any)
+	}
+}
+
+declare let ytSearch : YTSearch.ISearch;
+export = ytSearch;
